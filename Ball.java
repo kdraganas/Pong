@@ -25,12 +25,16 @@ public class Ball extends JPanel{
         }
         else if (y + ya < 0){
             game.racquet.setScore();
+            game.racquet.setSize(60,5);
+            game.racquett.setSize(60,5);
             game.speed++;
             x = 150;
             y = 200;
         }
         else if (y + ya > game.getHeight() - DIAMETER){
             game.racquett.setScore();
+            game.racquett.setSize(60,5);
+            game.racquet.setSize(60,5);
             game.speed++;
             x = 150;
             y = 200;
