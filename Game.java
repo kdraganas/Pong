@@ -35,9 +35,9 @@ public class Game extends JPanel {
 
                 //power-ups
                 if (e.getKeyCode() == KeyEvent.VK_UP)
-                    speed++;
+                    racquett.setSize(30,5);
                 if (e.getKeyCode() == KeyEvent.VK_W)
-                    speed++;
+                    racquet.setSize(30,5);
             }
         });
         setFocusable(true); //for the JPanel object to receive keyboard notifications it is necessary to include the instruction setFocusable(true), which allows us to receive the focus
@@ -66,7 +66,11 @@ public class Game extends JPanel {
         g2d.setColor(Color.pink); //setting the color
         g2d.setFont(new Font("Century Gothic", Font.BOLD, 20)); //setting the font
         g2d.drawString("P1: "+String.valueOf(racquet.getScore()), 230, 350); //displays the score of the first player which is the lower racquet
-        g2d.drawString("P2: "+String.valueOf(racquett.getScore()), 10, 30); //displays the score of the second player which is the upper racquet
+        g2d.drawString("P2: "+String.valueOf(racquett.getScore()), 0, 30); //displays the score of the second player which is the upper racquet
+
+        g2d.setFont(new Font("Century Gothic", Font.BOLD, 10));
+        g2d.drawString("UP for Power-Up", 200, 360);
+        g2d.drawString("W for Power-Up", 0, 10);
     }
 
     public void gameOver() throws InterruptedException {
@@ -87,7 +91,7 @@ public class Game extends JPanel {
         JFrame frame = new JFrame("Mini Tennis"); //This code would create a window named "Mini Tennis" in the size of 300 pixels by 300 pixels
         Game game = new Game();
         frame.add(game);
-        frame.setSize(300, 400);
+        frame.setSize(299, 405);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);	//If this line is not included then most probably, in closing the window the program won't finish and will continue running taking up too much space
         frame.setVisible(true); //But Mini Tennis window would not be visible until setVisible(true).
 
