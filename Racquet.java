@@ -54,4 +54,10 @@ public class Racquet extends JPanel {
     public int getBotY() {
         return y;
     }
+
+    @Override
+    public void setSize(int width, int height){
+        this.width = width;
+        this.height = height;
+    }
 }
